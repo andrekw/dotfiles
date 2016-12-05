@@ -24,7 +24,7 @@
 
 ;; install missing packages
 (defvar my/packages
-  '(company company-jedi auctex org ac-cider auto-complete cider clojure-mode  auto-complete popup cider ac-octave ac-slime slime ace-jump-mode auctex  yasnippet  clojure-snippets  company-irony-c-headers company-irony ess elisp-slime-nav emacs-eclim s exec-path-from-shell f find-file-in-project  flycheck-color-mode-line flycheck  haskell-mode  idle-highlight-mode ido-complete-space-or-hyphen ido-ubiquitous s ido-completing-read+ langtool  lua-mode git-commit with-editor markdown-mode  osx-plist paredit  pyvenv  rainbow-delimiters slime smart-mode-line-powerline-theme smart-mode-line powerline smex solarized-theme zenburn-theme))
+  '(company company-jedi auctex org ac-cider auto-complete cider clojure-mode  auto-complete popup cider ac-octave ac-slime slime ace-jump-mode auctex  yasnippet  clojure-snippets  company-irony-c-headers company-irony ess elisp-slime-nav s exec-path-from-shell f find-file-in-project  flycheck-color-mode-line flycheck  haskell-mode  idle-highlight-mode ido-complete-space-or-hyphen ido-ubiquitous s ido-completing-read+ langtool  lua-mode git-commit with-editor markdown-mode  osx-plist paredit  pyvenv  rainbow-delimiters slime smart-mode-line-powerline-theme smart-mode-line powerline smex solarized-theme zenburn-theme base16-theme))
 ;; TODO: base16-theme is not available on melpa-stable
 (require 'cl-lib)
 
