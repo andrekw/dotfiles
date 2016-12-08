@@ -24,7 +24,7 @@
 
 ;; install missing packages
 (defvar my/packages
-  '(company company-jedi auctex org ac-cider auto-complete cider clojure-mode  auto-complete popup cider ac-octave ac-slime slime ace-jump-mode auctex  yasnippet  clojure-snippets  company-irony-c-headers company-irony ess elisp-slime-nav s exec-path-from-shell f find-file-in-project  flycheck-color-mode-line flycheck  haskell-mode  idle-highlight-mode ido-complete-space-or-hyphen ido-ubiquitous s ido-completing-read+ langtool  lua-mode git-commit with-editor markdown-mode  osx-plist paredit  pyvenv  rainbow-delimiters slime smart-mode-line-powerline-theme smart-mode-line powerline smex solarized-theme zenburn-theme base16-theme))
+  '(company company-jedi auctex org ac-cider auto-complete cider clojure-mode  auto-complete popup cider ac-octave ac-slime slime ace-jump-mode auctex  yasnippet  clojure-snippets  company-irony-c-headers company-irony ess elisp-slime-nav s exec-path-from-shell f find-file-in-project  flycheck-color-mode-line flycheck  haskell-mode  idle-highlight-mode ido-complete-space-or-hyphen ido-ubiquitous s ido-completing-read+ langtool  lua-mode  markdown-mode  osx-plist paredit  pyvenv  rainbow-delimiters slime smart-mode-line-powerline-theme smart-mode-line powerline smex solarized-theme zenburn-theme base16-theme nyan-mode))
 ;; TODO: base16-theme is not available on melpa-stable
 (require 'cl-lib)
 
@@ -57,7 +57,7 @@
  '(ns-alternate-modifier (quote meta))
  '(package-selected-packages
    (quote
-    (zenburn-theme web-mode solarized-theme smex smart-mode-line-powerline-theme rainbow-delimiters pyvenv paredit osx-plist nyan-mode markdown-mode magit lua-mode langtool jsx-mode json-mode js2-mode ido-ubiquitous ido-complete-space-or-hyphen idle-highlight-mode haskell-mode gitignore-mode flycheck-color-mode-line find-file-in-project f exec-path-from-shell ess emacs-eclim elisp-slime-nav ein cyberpunk-theme company-statistics company-quickhelp company-jedi company-irony-c-headers company-irony clojure-snippets base16-theme auctex ace-jump-mode ac-slime ac-octave ac-cider)))
+    (zenburn-theme web-mode solarized-theme smex smart-mode-line-powerline-theme rainbow-delimiters pyvenv paredit osx-plist nyan-mode markdown-mode magit lua-mode langtool jsx-mode json-mode js2-mode ido-ubiquitous ido-complete-space-or-hyphen idle-highlight-mode haskell-mode gitignore-mode flycheck-color-mode-line find-file-in-project f exec-path-from-shell ess elisp-slime-nav ein cyberpunk-theme company-statistics company-quickhelp company-jedi company-irony-c-headers company-irony clojure-snippets base16-theme auctex ace-jump-mode ac-slime ac-octave ac-cider)))
  '(solarized-distinct-fringe-background t)
  '(solarized-high-contrast-mode-line t))
 (custom-set-faces
@@ -225,11 +225,6 @@
 ;; default octave-mode for .m files
 (add-to-list 'auto-mode-alist '("\\.m$" . octave-mode))
 
-;; configure eclim
-(require 'eclim)
-(require 'eclimd)
-(require 'company-emacs-eclim)
-(company-emacs-eclim-setup)
 (global-company-mode t)
 (company-quickhelp-mode 1)
 
