@@ -45,7 +45,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(ansi-term-color-vector
-   [unspecified "#202020" "#fb9fb1" "#acc267" "#ddb26f" "#6fc2ef" "#e1a3ee" "#6fc2ef" "#e0e0e0"])
+   [unspecified "#202020" "#fb9fb1" "#acc267" "#ddb26f" "#6fc2ef" "#e1a3ee" "#6fc2ef" "#e0e0e0"] t)
  '(company-idle-delay 0.2)
  '(company-quickhelp-delay 0.2)
  '(custom-safe-themes
@@ -58,7 +58,7 @@
  '(ns-alternate-modifier (quote meta))
  '(package-selected-packages
    (quote
-    (monokai-theme dockerfile-mode helm zenburn-theme web-mode solarized-theme smex smart-mode-line-powerline-theme rainbow-delimiters pyvenv paredit osx-plist nyan-mode markdown-mode magit lua-mode langtool jsx-mode json-mode js2-mode ido-ubiquitous ido-complete-space-or-hyphen idle-highlight-mode haskell-mode gitignore-mode flycheck-color-mode-line find-file-in-project f exec-path-from-shell ess elisp-slime-nav ein cyberpunk-theme company-statistics company-quickhelp company-jedi company-irony-c-headers company-irony clojure-snippets base16-theme auctex ace-jump-mode ac-slime ac-octave ac-cider)))
+    (ensime scala-mode cython-mode monokai-theme dockerfile-mode helm zenburn-theme web-mode solarized-theme smex smart-mode-line-powerline-theme rainbow-delimiters pyvenv paredit osx-plist nyan-mode markdown-mode magit lua-mode langtool jsx-mode json-mode js2-mode ido-ubiquitous ido-complete-space-or-hyphen idle-highlight-mode haskell-mode gitignore-mode flycheck-color-mode-line find-file-in-project f exec-path-from-shell ess elisp-slime-nav ein cyberpunk-theme company-statistics company-quickhelp company-jedi company-irony-c-headers company-irony clojure-snippets base16-theme auctex ace-jump-mode ac-slime ac-octave ac-cider)))
  '(python-shell-interpreter "/opt/local/bin/python")
  '(solarized-distinct-fringe-background t)
  '(solarized-high-contrast-mode-line t)
@@ -326,3 +326,15 @@
 ;; enable helm
 (global-set-key (kbd "M-X") 'helm-M-x)
 (helm-mode 1)
+
+;; use ipython as python interpreter
+(setq python-shell-interpreter "ipython"
+      python-shell-interpreter-args "-i")
+(setenv "IPY_TEST_SIMPLE_PROMPT" "1")
+
+;; use visual-line-mode in org-mode
+(add-hook 'org-mode-hook 'turn-on-visual-line-mode)
+
+;; collapse all headers in org-mode
+(add-hook 'org-mode-hook 'outline-show-all)
+
