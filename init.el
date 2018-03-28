@@ -24,7 +24,7 @@
 
 ;; install missing packages
 (defvar my/packages
-  '(company company-jedi auctex org ac-cider auto-complete cider clojure-mode  auto-complete popup cider ac-octave ac-slime slime ace-jump-mode auctex  yasnippet  clojure-snippets  company-irony-c-headers company-irony ess elisp-slime-nav s exec-path-from-shell f find-file-in-project  flycheck-color-mode-line flycheck  haskell-mode  idle-highlight-mode ido-complete-space-or-hyphen ido-ubiquitous s ido-completing-read+ langtool  lua-mode  markdown-mode magit osx-plist paredit  pyvenv  rainbow-delimiters slime smart-mode-line-powerline-theme smart-mode-line powerline smex solarized-theme zenburn-theme base16-theme nyan-mode helm))
+  '(company company-jedi auctex org ac-cider auto-complete cider clojure-mode  auto-complete popup cider ac-octave ac-slime slime ace-jump-mode auctex  yasnippet  clojure-snippets  company-irony-c-headers company-irony ess elisp-slime-nav s exec-path-from-shell f find-file-in-project  flycheck-color-mode-line flycheck  haskell-mode  idle-highlight-mode ido-complete-space-or-hyphen ido-ubiquitous s ido-completing-read+ langtool  lua-mode  markdown-mode magit osx-plist paredit  pyvenv  rainbow-delimiters slime smart-mode-line-powerline-theme smart-mode-line powerline smex solarized-theme zenburn-theme base16-theme nyan-mode helm cdlatex))
 
 (require 'cl-lib)
 
@@ -50,7 +50,7 @@
  '(company-quickhelp-delay 0.2)
  '(custom-safe-themes
    (quote
-    ("ef04dd1e33f7cbd5aa3187981b18652b8d5ac9e680997b45dc5d00443e6a46e3" "c968804189e0fc963c641f5c9ad64bca431d41af2fb7e1d01a2a6666376f819c" "69831e572dc46ced47c5309bff8fc2f4a9e237e2bad2c76f313da814a4628694" "e1498b2416922aa561076edc5c9b0ad7b34d8ff849f335c13364c8f4276904f0" "dcbe22bc74153257f412183dd14ab9652197f59adf65646e618c2577e7cca34d" "b04425cc726711a6c91e8ebc20cf5a3927160681941e06bc7900a5a5bfe1a77f" "f21caace402180ab3dc5157d2bb843c4daafbe64aadc362c9f4558ac17ce43a2" "27890155f81d23512a9933f4ac6110e94de6266e948fd464eda3423c799713e2" "83279c1d867646c5eea8a804a67a23e581b9b3b67f007e7831279ed3a4de9466" "f0b0710b7e1260ead8f7808b3ee13c3bb38d45564e369cbe15fc6d312f0cd7a0" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "c74e83f8aa4c78a121b52146eadb792c9facc5b1f02c917e3dbb454fca931223" "a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" "756597b162f1be60a12dbd52bab71d40d6a2845a3e3c2584c6573ee9c332a66e" "e56f1b1c1daec5dbddc50abd00fcd00f6ce4079f4a7f66052cf16d96412a09a9" "c5a044ba03d43a725bd79700087dea813abcb6beb6be08c7eb3303ed90782482" "6a37be365d1d95fad2f4d185e51928c789ef7a4ccf17e7ca13ad63a8bf5b922f" "e3c90203acbde2cf8016c6ba3f9c5300c97ddc63fcb78d84ca0a144d402eedc6" "51bea7765ddaee2aac2983fac8099ec7d62dff47b708aa3595ad29899e9e9e44" "9bac44c2b4dfbb723906b8c491ec06801feb57aa60448d047dbfdbd1a8650897" "16248150e4336572ff4aa21321015d37c3744a9eb243fbd1e934b594ff9cf394" "11d069fbfb0510e2b32a5787e26b762898c7e480364cbc0779fe841662e4cf5d" "0f0e3af1ec61d04ff92f238b165dbc6d2a7b4ade7ed9812b4ce6b075e08f49fe" "a3d519ee30c0aa4b45a277ae41c4fa1ae80e52f04098a2654979b1ab859ab0bf" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default)))
+    ("84d2f9eeb3f82d619ca4bfffe5f157282f4779732f48a5ac1484d94d5ff5b279" "ef04dd1e33f7cbd5aa3187981b18652b8d5ac9e680997b45dc5d00443e6a46e3" "c968804189e0fc963c641f5c9ad64bca431d41af2fb7e1d01a2a6666376f819c" "69831e572dc46ced47c5309bff8fc2f4a9e237e2bad2c76f313da814a4628694" "e1498b2416922aa561076edc5c9b0ad7b34d8ff849f335c13364c8f4276904f0" "dcbe22bc74153257f412183dd14ab9652197f59adf65646e618c2577e7cca34d" "b04425cc726711a6c91e8ebc20cf5a3927160681941e06bc7900a5a5bfe1a77f" "f21caace402180ab3dc5157d2bb843c4daafbe64aadc362c9f4558ac17ce43a2" "27890155f81d23512a9933f4ac6110e94de6266e948fd464eda3423c799713e2" "83279c1d867646c5eea8a804a67a23e581b9b3b67f007e7831279ed3a4de9466" "f0b0710b7e1260ead8f7808b3ee13c3bb38d45564e369cbe15fc6d312f0cd7a0" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "c74e83f8aa4c78a121b52146eadb792c9facc5b1f02c917e3dbb454fca931223" "a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" "756597b162f1be60a12dbd52bab71d40d6a2845a3e3c2584c6573ee9c332a66e" "e56f1b1c1daec5dbddc50abd00fcd00f6ce4079f4a7f66052cf16d96412a09a9" "c5a044ba03d43a725bd79700087dea813abcb6beb6be08c7eb3303ed90782482" "6a37be365d1d95fad2f4d185e51928c789ef7a4ccf17e7ca13ad63a8bf5b922f" "e3c90203acbde2cf8016c6ba3f9c5300c97ddc63fcb78d84ca0a144d402eedc6" "51bea7765ddaee2aac2983fac8099ec7d62dff47b708aa3595ad29899e9e9e44" "9bac44c2b4dfbb723906b8c491ec06801feb57aa60448d047dbfdbd1a8650897" "16248150e4336572ff4aa21321015d37c3744a9eb243fbd1e934b594ff9cf394" "11d069fbfb0510e2b32a5787e26b762898c7e480364cbc0779fe841662e4cf5d" "0f0e3af1ec61d04ff92f238b165dbc6d2a7b4ade7ed9812b4ce6b075e08f49fe" "a3d519ee30c0aa4b45a277ae41c4fa1ae80e52f04098a2654979b1ab859ab0bf" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default)))
  '(doc-view-continuous t)
  '(inferior-octave-program "/opt/local/bin/octave")
  '(mac-drawing-use-gcd t)
@@ -58,8 +58,8 @@
  '(ns-alternate-modifier (quote meta))
  '(package-selected-packages
    (quote
-    (ensime scala-mode cython-mode monokai-theme dockerfile-mode helm zenburn-theme web-mode solarized-theme smex smart-mode-line-powerline-theme rainbow-delimiters pyvenv paredit osx-plist nyan-mode markdown-mode magit lua-mode langtool jsx-mode json-mode js2-mode ido-ubiquitous ido-complete-space-or-hyphen idle-highlight-mode haskell-mode gitignore-mode flycheck-color-mode-line find-file-in-project f exec-path-from-shell ess elisp-slime-nav ein cyberpunk-theme company-statistics company-quickhelp company-jedi company-irony-c-headers company-irony clojure-snippets base16-theme auctex ace-jump-mode ac-slime ac-octave ac-cider)))
- '(python-shell-interpreter "/opt/local/bin/python")
+    (ebib ensime scala-mode cython-mode monokai-theme dockerfile-mode helm zenburn-theme web-mode solarized-theme smex smart-mode-line-powerline-theme rainbow-delimiters pyvenv paredit osx-plist nyan-mode markdown-mode magit lua-mode langtool jsx-mode json-mode js2-mode ido-ubiquitous ido-complete-space-or-hyphen idle-highlight-mode haskell-mode gitignore-mode flycheck-color-mode-line find-file-in-project f exec-path-from-shell ess elisp-slime-nav ein cyberpunk-theme company-statistics company-quickhelp company-jedi company-irony-c-headers company-irony clojure-snippets base16-theme auctex ace-jump-mode ac-slime ac-octave ac-cider cdlatex)))
+ '(python-shell-interpreter "/opt/local/bin/python" t)
  '(solarized-distinct-fringe-background t)
  '(solarized-high-contrast-mode-line t)
  '(x-stretch-cursor t))
@@ -338,3 +338,8 @@
 ;; collapse all headers in org-mode
 (add-hook 'org-mode-hook 'outline-show-all)
 
+;; use cdlatex in org-mode
+(add-hook 'org-mode-hook 'turn-on-org-cdlatex)
+
+;; enable linum-mode to show line number column
+(global-linum-mode t)
