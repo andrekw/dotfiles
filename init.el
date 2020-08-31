@@ -16,15 +16,20 @@
 (setenv "WORKON_HOME" "~/Documents/Projetos/python/venv")
 
 ;; setup package hosts
-(setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
-			 ("melpa-stable" . "https://stable.melpa.org/packages/")))
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa-stable" . "https://stable.melpa.org/packages/") t)
+
+;; workaround for emacs<26.3
+(if (version< emacs-version "26.3")
+    (setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3"))
 
 ;; initialize packages so we can load themes afterwards
 (package-initialize)
 
 ;; install missing packages
 (defvar my/packages
-  '(company company-jedi auctex org ac-cider auto-complete cider clojure-mode  auto-complete popup cider ac-octave ac-slime slime ace-jump-mode auctex  yasnippet  clojure-snippets  company-irony-c-headers company-irony ess elisp-slime-nav s exec-path-from-shell f find-file-in-project  flycheck-color-mode-line flycheck  haskell-mode  idle-highlight-mode ido-complete-space-or-hyphen ido-ubiquitous s ido-completing-read+ langtool  lua-mode  markdown-mode magit osx-plist paredit  pyvenv  rainbow-delimiters slime smart-mode-line-powerline-theme smart-mode-line powerline smex solarized-theme zenburn-theme base16-theme nyan-mode helm cdlatex))
+  '(company company-jedi company-quickhelp auctex org ac-cider auto-complete cider clojure-mode  auto-complete popup cider ac-octave ac-slime slime ace-jump-mode auctex  yasnippet  clojure-snippets  company-irony-c-headers company-irony ess elisp-slime-nav s exec-path-from-shell f find-file-in-project  flycheck-color-mode-line flycheck  haskell-mode  idle-highlight-mode ido-complete-space-or-hyphen ido-completing-read+ s ido-completing-read+ langtool  lua-mode  markdown-mode magit osx-plist paredit  pyvenv  rainbow-delimiters slime smart-mode-line-powerline-theme smart-mode-line powerline smex solarized-theme zenburn-theme base16-theme nyan-mode cdlatex))
 
 (require 'cl-lib)
 
@@ -58,7 +63,7 @@
  '(ns-alternate-modifier (quote meta))
  '(package-selected-packages
    (quote
-    (ebib ensime scala-mode cython-mode monokai-theme dockerfile-mode helm zenburn-theme web-mode solarized-theme smex smart-mode-line-powerline-theme rainbow-delimiters pyvenv paredit osx-plist nyan-mode markdown-mode magit lua-mode langtool jsx-mode json-mode js2-mode ido-ubiquitous ido-complete-space-or-hyphen idle-highlight-mode haskell-mode gitignore-mode flycheck-color-mode-line find-file-in-project f exec-path-from-shell ess elisp-slime-nav ein cyberpunk-theme company-statistics company-quickhelp company-jedi company-irony-c-headers company-irony clojure-snippets base16-theme auctex ace-jump-mode ac-slime ac-octave ac-cider cdlatex)))
+    (ediprolog zenburn-theme solarized-theme smex smart-mode-line-powerline-theme rainbow-delimiters pyvenv paredit osx-plist nyan-mode markdown-mode magit lua-mode langtool ido-completing-read+ ido-complete-space-or-hyphen idle-highlight-mode helm haskell-mode flycheck-color-mode-line find-file-in-project f exec-path-from-shell ess elisp-slime-nav company-quickhelp company-jedi company-irony-c-headers company-irony clojure-snippets cdlatex base16-theme auctex ace-jump-mode ac-slime ac-octave ac-cider)))
  '(python-shell-interpreter "/opt/local/bin/python" t)
  '(solarized-distinct-fringe-background t)
  '(solarized-high-contrast-mode-line t)
@@ -185,8 +190,9 @@
   (add-to-list 'company-backends 'company-jedi))
 (add-hook 'python-mode-hook 'my/python-mode-hook)
 
-;; enable ido-mode
+;; enable ido-mode -- not needed since using helm
 (ido-mode t)
+(ido-everywhere t)
 
 ;; enable smex https://github.com/nonsequitur/smex/
 ;;; Smex
@@ -228,9 +234,10 @@
 
 ;; default octave-mode for .m files
 (add-to-list 'auto-mode-alist '("\\.m$" . octave-mode))
+(add-to-list 'auto-mode-alist '("\\.pl$" . prolog-mode))
 
 (global-company-mode t)
-(company-quickhelp-mode 1)
+(company-quickhelp-mode)
 
 
 ;; configure smart-mode-line
@@ -277,8 +284,6 @@
 	    (setenv "LC_ALL" "en_US.UTF-8")
 	    (setenv "LANG" "en_US.UTF-8")))
 
-(require 'ein)
-
 (nyan-mode 1)
 
 (server-start)
@@ -324,8 +329,8 @@
 (server-start)
 
 ;; enable helm
-(global-set-key (kbd "M-X") 'helm-M-x)
-(helm-mode 1)
+;; (global-set-key (kbd "M-X") 'helm-M-x)
+;; (helm-mode 1)
 
 ;; use ipython as python interpreter
 (setq python-shell-interpreter "ipython"
@@ -343,3 +348,8 @@
 
 ;; enable linum-mode to show line number column
 (global-linum-mode t)
+
+(require 'ido-completing-read+)
+(ido-ubiquitous-mode t)
+
+(windmove-default-keybindings)
